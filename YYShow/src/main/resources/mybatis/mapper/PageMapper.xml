@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yyw.test.mapper.PageMapper">
+   <insert id="insertPages" parameterType="java.lang.Object">
+        insert into page (id,title, background)
+        values
+        (#{pageId,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR}, #{background,jdbcType=VARCHAR})
+    </insert>
+    
+    <insert id="insertModules" parameterType="java.lang.Object">
+        insert into module (pageId,type,className,customClass,customStyle,text,url,link)
+        values
+        (#{pageId,jdbcType=VARCHAR},#{type,jdbcType=VARCHAR},#{className,jdbcType=VARCHAR}, 
+         #{customClass,jdbcType=VARCHAR},#{customStyle,jdbcType=VARCHAR},
+         #{text,jdbcType=VARCHAR},#{url,jdbcType=VARCHAR},#{link,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertModuleStyle" parameterType="java.lang.Object">
+    	insert into module_style (moduleId,width,height,left,top,fontSize,color,zIndex,animationDelay,animationIterationCount)
+    	values
+    	(#{moduleId,jdbcType=VARCHAR},#{width,jdbcType=VARCHAR},#{height,jdbcType=VARCHAR},
+    	#{left,jdbcType=VARCHAR},#{top,jdbcType=VARCHAR},#{fontSize,jdbcType=VARCHAR}
+    	#{color,jdbcType=VARCHAR},#{zIndex,jdbcType=VARCHAR},#{animationDelay,jdbcType=VARCHAR},
+    	#{animationIterationCount,jdbcType=VARCHAR})
+    </insert>
+</mapper>

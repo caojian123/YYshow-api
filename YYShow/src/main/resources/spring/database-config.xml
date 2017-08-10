@@ -47,7 +47,6 @@
 		</property>
 		<property name="mapperLocations">
 			<list>
-			    <value>classpath:durcframework_mybatis/expressionBlock.xml</value>
 				<value>classpath:mybatis/mapper/*.xml</value>
 			</list>
 		</property>
@@ -65,39 +64,14 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-		<property name="basePackage" value="com.yyw.myblog.mapper" />
+		<property name="basePackage" value="com.yyw.test.mapper" />
 	</bean>
 
 	<!-- 使用annotation定义事务 -->
-	<tx:annotation-driven transaction-manager="transactionManager"
+	<!-- <tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
-
+ -->
 	<!-- 事务配置 -->
 	<!-- 打开注释开启声明式事务,并不是所有方法都需要事务,具体要看项目需求以及团队规范 -->
-
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="delete*" propagation="REQUIRED" read-only="false"
-				rollback-for="java.lang.RuntimeException" />
-			<tx:method name="del*" propagation="REQUIRED" read-only="false"
-				rollback-for="java.lang.RuntimeException" />
-			<tx:method name="insert*" propagation="REQUIRED" read-only="false"
-				rollback-for="java.lang.RuntimeException" />
-			<tx:method name="add*" propagation="REQUIRED" read-only="false"
-				rollback-for="java.lang.RuntimeException" />
-			<tx:method name="create*" propagation="REQUIRED" read-only="false"
-				rollback-for="java.lang.RuntimeException" />
-			<tx:method name="update*" propagation="REQUIRED" read-only="false"
-				rollback-for="java.lang.RuntimeException" />
-			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
-		</tx:attributes>
-	</tx:advice>
-	<aop:config>
-		<aop:pointcut id="interceptorPointCuts"
-			expression="execution(* com.yyw.test.service.*.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts" />
-	</aop:config>
 
 </beans>

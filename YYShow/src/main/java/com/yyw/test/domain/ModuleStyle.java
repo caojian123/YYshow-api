@@ -1,6 +1,7 @@
 package com.yyw.test.domain;
 
 public class ModuleStyle {
+	private String moduleId;
 	private String width;
 	private String height;
 	private String left;
@@ -10,6 +11,16 @@ public class ModuleStyle {
 	private String zIndex;
 	private String animationDelay;
 	private String animationIterationCount;
+	
+	
+	public String getModuleId() {
+		return moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+	}
+
 	public String getWidth() {
 		return width;
 	}

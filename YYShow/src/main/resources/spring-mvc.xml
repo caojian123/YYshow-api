@@ -17,11 +17,13 @@
     <context:component-scan base-package="com.yyw.test.controller">
 		<context:include-filter expression="org.springframework.stereotype.Controller" type="annotation" />
 	</context:component-scan>
+	
 	<context:annotation-config />
 	
 	<!-- 打开spring mvc注解驱动 -->
 	<mvc:annotation-driven>
-		  <!-- 强化参数接收 -->
+	
+		<!-- 强化参数接收 -->
 		<!-- <mvc:argument-resolvers>
 			<bean class="org.durcframework.core.form.FormModelMethodArgumentResolver" />
 		</mvc:argument-resolvers> -->

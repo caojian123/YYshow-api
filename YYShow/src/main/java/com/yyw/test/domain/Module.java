@@ -1,8 +1,8 @@
 package com.yyw.test.domain;
 
-import java.util.List;
-
 public class Module {
+	
+	private String pageId;
 	private String moduleId;
 	private String type;
 	private String className;
@@ -13,6 +13,14 @@ public class Module {
 	private String link;
     private ModuleStyle style;
    
+
+	public String getPageId() {
+		return pageId;
+	}
+
+	public void setPageId(String pageId) {
+		this.pageId = pageId;
+	}
 
 	public ModuleStyle getStyle() {
 		return style;
