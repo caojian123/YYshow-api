@@ -7,13 +7,24 @@ public class User {
 	private String username;
 	private String password;
 	private Date loginTime;
+	private String pageId;
+	
+	
 
-	public Integer getId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setId(Integer userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public String getPageId() {
+		return pageId;
+	}
+
+	public void setPageId(String pageId) {
+		this.pageId = pageId;
 	}
 
 	public String getUsername() {

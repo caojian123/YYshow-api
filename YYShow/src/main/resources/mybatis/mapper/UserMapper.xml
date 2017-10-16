@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yyw.test.mapper.UserMapper">
+	<!-- <resultMap id="queryResultMap" type="EStudnet">
+	  <id property="userId" column="id"/>
+	  <result property="username" column="username"/>
+	  <result property="password" column="password"/>
+	  <result property="loginTime" column="logintime"/>
+	   <result property="pageId" column="pageId"/>
+	</resultMap>
+
 	<select id="login" resultMap="queryResultMap" parameterType="java.lang.Object">
 	   SELECT *
 	   FROM user
 	   WHERE username = #{username,jdbcType=VARCHAR}
 	   AND   password = #{password,jdbcType=VARCHAR} 
 	   LIMIT 0,1 
-	</select>
+	</select> -->
 	
 </mapper>
